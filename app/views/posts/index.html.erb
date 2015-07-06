@@ -1,0 +1,51 @@
+
+
+
+
+<div>
+  <ol class="breadcrumb">
+    <li class="active">
+      固定费配置
+    </li>
+    <li>
+      <%= link_to '新增', new_post_path,:style=>"color:green"  %>
+    </li>
+    <li class="active">
+      产品列表
+    </li>
+  </ol>
+</div>
+
+
+<table id="datatable_id" class="display">
+  <thead>
+    <tr>
+      <!---注意boostrap是12栅格布局，所以col-sm设置不能超过12，否则会溢出---->
+      <th class="col-sm-2">User name</th>
+      <th class="col-sm-5">User email</th>
+      <th class="col-sm-2">User remark</th>
+      <th class="col-sm-1">查看</th>
+      <th class="col-sm-1">编辑</th>
+      <th class="col-sm-1">删除</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.user_name %></td>
+        <td><%= post.user_email %></td>
+        <td><%= post.user_remark %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+

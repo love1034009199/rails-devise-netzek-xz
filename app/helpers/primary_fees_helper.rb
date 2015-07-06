@@ -1,0 +1,2 @@
+module PrimaryFeesHelper
+end

@@ -1,0 +1,53 @@
+
+
+
+
+<div>
+  <ol class="breadcrumb">
+    <li class="active">
+      优惠费
+    </li>
+    <li>
+      <%= link_to '新增', new_discount_fee_path,:style=>"color:green"  %>
+    </li>
+    <li class="active">
+      产品列表
+    </li>
+  </ol>
+</div>
+
+
+<table id="discount_datatable_id" class="display">
+  <thead>
+    <tr>
+      <!---注意boostrap是12栅格布局，所以col-sm设置不能超过12，否则会溢出---->
+      <th class="col-sm-1">产品名称</th>
+      <th class="col-sm-7">产品配置</th>
+      <th class="col-sm-1">备注信息</th>
+      <th class="col-sm-1">更新时间</th>
+      <th class="col-sm-1">查看</th>
+      <th class="col-sm-1">编辑</th>
+      <th class="col-sm-1">删除</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @discount_fees.each do |discount_fee| %>
+      <tr>
+        <td><%= discount_fee.discount_name %></td>
+        <td><%= discount_fee.discount_description %></td>
+        <td><%= discount_fee.discount_remark %></td>
+            <td><%= discount_fee.updated_at %></td>
+        <td><%= link_to 'Show', discount_fee %></td>
+        <td><%= link_to 'Edit', edit_discount_fee_path(discount_fee) %></td>
+        <td><%= link_to 'Destroy', discount_fee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+

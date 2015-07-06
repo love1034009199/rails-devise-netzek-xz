@@ -1,0 +1,2 @@
+module DiscountFeesHelper
+end

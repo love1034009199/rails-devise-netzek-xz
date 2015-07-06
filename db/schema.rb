@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150101174918) do
+ActiveRecord::Schema.define(version: 20150702063246) do
+
+  create_table "discount_fees", force: :cascade do |t|
+    t.string   "discount_name"
+    t.text     "discount_description"
+    t.text     "discount_configure"
+    t.string   "discount_remark"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "user_name"
+    t.string   "user_email"
+    t.text     "user_remark"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "primary_fees", force: :cascade do |t|
+    t.string   "primary_name"
+    t.text     "primary_description"
+    t.text     "primary_configure"
+    t.string   "primary_remark"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

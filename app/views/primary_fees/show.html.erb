@@ -1,0 +1,38 @@
+
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading ">
+    固定费详情
+  </div>
+  <table class="table table-bordered table-condensed" style="table-layout:fixed">
+
+    <thead>
+    <tr>
+            <th class="col-sm-3 control-label">产品名称</th>
+            <th class="col-sm-3 control-label" width="20%">产品配置</th>
+            <th class="col-sm-3 control-label" width="20%">配置语句</th>
+            <th class="col-sm-3 control-label">备注信息</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+             <td>  <%= @primary_fee.primary_name %></td>
+             <td style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">  <%= @primary_fee.primary_description %></td>
+             <td style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">  <%= @primary_fee.primary_configure %></td>
+             <td>  <%= @primary_fee.primary_remark %></td>
+           </tr>
+    </tbody>
+    
+  </table>
+</div>
+</p>
+<table border="1" style="color:green">
+  <%= link_to '编辑', edit_primary_fee_path(@primary_fee),:style=>"color:green" %> |
+  <%= link_to '返回', primary_fees_path,:style=>"color:green" %> | 结果:
+  <br />
+</table>
+<textarea class="col-sm-12"  rows="15" readonly="readonly"> <%= @primary_fee.primary_configure  %></textarea>
+</p>
+

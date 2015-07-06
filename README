@@ -56,3 +56,17 @@ Preferences:
 ________________________
 
 License
+
+mkdir -p lib/templates/js/assets/templates
+mkdir -p lib/templates/erb/scaffold/templates
+
+mkdir -p  lib/rails/generators/coffee/assets
+
+--固定费
+rails g scaffold PrimaryFee  primary_name:string primary_description:text primary_configure:text primary_remark:string
+
+--优惠discount
+rails g scaffold DiscountFee  discount_name:string discount_description:text discount_configure:text discount_remark:string
+
+
+

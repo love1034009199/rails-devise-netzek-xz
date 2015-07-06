@@ -1,0 +1,30 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_name %><br>
+    <%= f.text_field :user_name , :size => "118", :class => "col-sm-12" %>
+  </div>
+  <div class="field">
+    <%= f.label :user_email %><br>
+    <%= f.text_field :user_email , :size => "118", :class => "col-sm-12" %>
+  </div>
+  <div class="field">
+    <%= f.label :user_remark %><br>
+    <%= f.text_area :user_remark , :size => "118", :class => "col-sm-12" %>
+  </div>
+  </br>
+  <div class="actions">
+    <%= f.submit "提交", :style => "color:green" %>
+  </div>
+<% end %>

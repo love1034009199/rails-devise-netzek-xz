@@ -1,0 +1,36 @@
+
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading ">
+    【请修改】详情
+  </div>
+  <table class="table table-bordered table-condensed">
+
+    <thead>
+    <tr>
+            <th class="col-sm-2 control-label">User name</th>
+            <th class="col-sm-2 control-label">User email</th>
+            <th class="col-sm-2 control-label">User remark</th>
+     
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+             <td>  <%= @post.user_name %></td>
+             <td>  <%= @post.user_email %></td>
+             <td>  <%= @post.user_remark %></td>
+           </tr>
+    </tbody>
+    
+  </table>
+</div>
+</p>
+<table border="1" style="color:green">
+  <%= link_to '编辑', edit_post_path(@post),:style=>"color:green" %> |
+  <%= link_to '返回', posts_path,:style=>"color:green" %> | 结果:
+  <br />
+</table>
+<textarea class="col-sm-12"  rows="15" readonly="readonly"> <%= @post.user_email %></textarea>
+</p>
+

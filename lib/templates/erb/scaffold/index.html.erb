@@ -1,0 +1,51 @@
+
+
+
+
+<div>
+  <ol class="breadcrumb">
+    <li class="active">
+      固定费
+    </li>
+    <li>
+      <%%= link_to '新增', new_<%= singular_table_name %>_path,:style=>"color:green"  %>
+    </li>
+    <li class="active">
+      产品列表
+    </li>
+  </ol>
+</div>
+
+
+<table id="datatable_id" class="display">
+  <thead>
+    <tr>
+      <!---注意boostrap是12栅格布局，所以col-sm设置不能超过12，否则会溢出---->
+<% attributes.reject(&:password_digest?).each do |attribute| -%>
+      <th class="col-sm-1"><%= attribute.human_name %></th>
+<% end -%>
+      <th class="col-sm-1">查看</th>
+      <th class="col-sm-1">编辑</th>
+      <th class="col-sm-1">删除</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+      <tr>
+<% attributes.reject(&:password_digest?).each do |attribute| -%>
+        <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+<% end -%>
+        <td><%%= link_to 'Show', <%= singular_table_name %> %></td>
+        <td><%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %></td>
+        <td><%%= link_to 'Destroy', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <%% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+

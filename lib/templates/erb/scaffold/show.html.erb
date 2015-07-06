@@ -1,0 +1,36 @@
+
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading ">
+    固定费详情
+  </div>
+  <table class="table table-bordered table-condensed">
+
+    <thead>
+    <tr>
+      <% attributes.reject(&:password_digest?).each do |attribute| -%>
+      <th class="col-sm-2 control-label"><%= attribute.human_name %></th>
+      <% end -%>
+  
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+       <% attributes.reject(&:password_digest?).each do |attribute| -%>
+      <td>  <%%= @<%= singular_table_name %>.<%= attribute.name %> %></td>
+       <% end -%>
+    </tr>
+    </tbody>
+    
+  </table>
+</div>
+</p>
+<table border="1" style="color:green">
+  <%%= link_to '编辑', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>),:style=>"color:green" %> |
+  <%%= link_to '返回', <%= index_helper %>_path,:style=>"color:green" %> | 结果:
+  <br />
+</table>
+<textarea class="col-sm-12"  rows="15" readonly="readonly"> <%%= @<%= singular_table_name %> 修改为：@for_test.test_config %></textarea>
+</p>
+

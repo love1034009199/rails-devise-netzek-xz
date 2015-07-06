@@ -1,0 +1,22 @@
+
+
+
+
+<div>
+  <ol class="breadcrumb">
+    <li>
+      [固话编辑]
+    </li>
+    <li>
+      abc编辑
+    </li>
+    <li class="active" >
+      <%= link_to '查看', @post,:style=>"color:green" %> |
+      <%= link_to '返回', posts_path, :style => "color:green"  %>
+    </li>
+  </ol>
+</div>
+
+<%= render 'form' %>
+
+

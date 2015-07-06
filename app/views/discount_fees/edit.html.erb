@@ -1,0 +1,22 @@
+
+
+
+
+<div>
+  <ol class="breadcrumb">
+    <li>
+      优惠费
+    </li>
+    <li>
+      编辑
+    </li>
+    <li class="active" >
+      <%= link_to '查看', @discount_fee,:style=>"color:green" %> |
+      <%= link_to '返回', discount_fees_path, :style => "color:green"  %>
+    </li>
+  </ol>
+</div>
+
+<%= render 'form' %>
+
+

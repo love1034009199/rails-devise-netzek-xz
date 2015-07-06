@@ -1,0 +1,29 @@
+<%= form_for(@primary_fee) do |f| %>
+  <% if @primary_fee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@primary_fee.errors.count, "error") %> prohibited this primary_fee from being saved:</h2>
+
+      <ul>
+      <% @primary_fee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "产品名称" %><br>
+    <%= f.text_field :primary_name , :size => "118", :class => "col-sm-12" %>
+  </div>
+  <div class="field">
+    <%= f.label "产品配置" %><br>
+    <%= f.text_area :primary_description, :rows => "18", :class => "col-sm-12" %>
+  </div>
+  <div class="field">
+    <%= f.label "备注信息" %><br>
+    <%= f.text_field :primary_remark , :size => "118", :class => "col-sm-12" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "提交", :style => "color:green" %>
+  </div>
+<% end %>
